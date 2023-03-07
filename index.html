@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban-Board | Task Manger</title>
+  <link rel="stylesheet" href="./css/general.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/queries.css">
+</head>
+
+<body>
+  <main class="container">
+    <header>
+      <h1 class="main-heading">Kanban-Board | Task Manger</h1>
+    </header>
+    <div class="boards">
+      <div class="board-container">
+        <h2 class="board-title">Not Started</h2>
+        <div class="tasks-list">
+          <div class="task-cont" draggable="true">
+            <input class="task" type="text" placeholder="Task 01" value="Task 01">
+            <div class="control-btns">
+              <button class="edit">E</button>
+              <button class="remove">X</button>
+            </div>
+          </div>
+        </div>
+        <button class="add-btn btn">+ Add</button>
+      </div>
+      <div class="board-container">
+        <h2 class="board-title">In Progress</h2>
+        <div class="tasks-list">
+          <div class="task-cont">
+            <input class="task" type="text" placeholder="Task 01" value="Task 01">
+          </div>
+          <div class="task-cont">
+            <input class="task" type="text" placeholder="Task 02" value="Task 02" disabled>
+          </div>
+        </div>
+        <button class="add-btn btn">+ Add</button>
+      </div>
+      <div class="board-container">
+        <h2 class="board-title">Completed</h2>
+        <div class="tasks-list">
+        </div>
+        <button class="add-btn btn">+ Add</button>
+      </div>
+      <button class="add-board btn">+ new</button>
+    </div>
+  </main>
+</body>
+<script src="./js/main.js"></script>
+
+</html>

@@ -1,0 +1,84 @@
+main {
+  background-color: #34f0a8;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.main-heading {
+  margin-bottom: 10rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.boards {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 40rem;
+  border-radius: 0.5rem;
+}
+
+main .board-container {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  margin: 2rem 0;
+}
+
+main .board-container .board-title {
+  font-size: 2.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.tasks-list {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tasks-list .empty-msg {
+  align-self: center;
+  width: 80%;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.tasks-list .task-cont .task,
+.add-btn {
+  width: 85%;
+  height: 3rem;
+  margin-bottom: 0.5rem;
+  padding: 0 1.4rem;
+}
+
+.tasks-list .task-cont .task:disabled {
+  background-color: #fff;
+  color: #000;
+}
+
+.tasks-list .task-cont {
+  position: relative;
+}
+.tasks-list .task-cont .control-btns {
+  position: absolute;
+  top: 0.5rem;
+  right: 5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.tasks-list .task-cont .control-btns button {
+  padding: 0.25rem;
+  border-radius: 20rem;
+}
+
+.add-board {
+  width: 25rem;
+  margin-right: 5rem;
+  margin-top: 6rem;
+}
