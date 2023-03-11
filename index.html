@@ -6,6 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kanban-Board | Task Manger</title>
+  <!--Icons-->
+  <link rel="stylesheet" href="./css/all.min.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&amp;display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./css/general.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/queries.css">
@@ -21,7 +29,7 @@
         <h2 class="board-title">Not Started</h2>
         <div class="tasks-list">
           <div class="task-cont" draggable="true">
-            <input class="task" type="text" placeholder="Task 01" value="Task 01">
+            <input class="task" type="text" placeholder="Task 01" value="Task 01" disabled>
             <div class="control-btns">
               <button class="edit">E</button>
               <button class="remove">X</button>
@@ -33,12 +41,6 @@
       <div class="board-container">
         <h2 class="board-title">In Progress</h2>
         <div class="tasks-list">
-          <div class="task-cont">
-            <input class="task" type="text" placeholder="Task 01" value="Task 01">
-          </div>
-          <div class="task-cont">
-            <input class="task" type="text" placeholder="Task 02" value="Task 02" disabled>
-          </div>
         </div>
         <button class="add-btn btn">+ Add</button>
       </div>
