@@ -20,37 +20,29 @@
 </head>
 
 <body>
+  <header class="container">
+    <h1 class="main-heading">Kanban-Board | Task Manger</h1>
+  </header>
   <main class="container">
-    <header>
-      <h1 class="main-heading">Kanban-Board | Task Manger</h1>
-    </header>
     <div class="boards">
       <div class="board-container">
-        <h2 class="board-title">Not Started</h2>
-        <div class="tasks-list">
-          <div class="task-cont" draggable="true">
-            <input class="task" type="text" placeholder="Task 01" value="Task 01" disabled>
-            <div class="control-btns">
-              <button class="edit">E</button>
-              <button class="remove">X</button>
-            </div>
-          </div>
-        </div>
-        <button class="add-btn btn">+ Add</button>
-      </div>
-      <div class="board-container">
-        <h2 class="board-title">In Progress</h2>
+        <input class="board-title" type="text" placeholder="board-title" value="Not Started" disabled>
         <div class="tasks-list">
         </div>
         <button class="add-btn btn">+ Add</button>
       </div>
       <div class="board-container">
-        <h2 class="board-title">Completed</h2>
+        <input class="board-title" type="text" placeholder="board-title" value="In Progress" disabled>
         <div class="tasks-list">
         </div>
         <button class="add-btn btn">+ Add</button>
       </div>
-      <button class="add-board btn">+ new</button>
+      <div class="board-container">
+        <input class="board-title" type="text" placeholder="board-title" value="Completed" disabled>
+        <div class="tasks-list">
+        </div>
+        <button class="add-btn btn">+ Add</button>
+      </div>
     </div>
   </main>
 </body>

@@ -1,84 +1,95 @@
-main {
-  background-color: #34f0a8;
+header {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  padding: 1rem;
 }
-
-.main-heading {
-  margin-bottom: 10rem;
+header .main-heading {
+  margin: 10rem 0;
   font-size: 3rem;
   font-weight: bold;
 }
 
-.boards {
+main .boards {
   display: flex;
   flex-wrap: wrap;
-  min-height: 40rem;
+  justify-content: center;
   border-radius: 0.5rem;
+  gap: 5rem;
+  padding: 0 2.5rem;
 }
 
-main .board-container {
+main .boards .board-container {
   display: flex;
   flex-direction: column;
-  width: 30rem;
-  margin: 2rem 0;
+  width: 25rem;
 }
 
-main .board-container .board-title {
-  font-size: 2.4rem;
-  margin-bottom: 1.6rem;
-}
-
-.tasks-list {
-  width: 100%;
-  margin-bottom: 0.5rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.tasks-list .empty-msg {
-  align-self: center;
-  width: 80%;
-  font-size: 1.6rem;
-  font-weight: bold;
+main .boards .board-container .board-title {
+  background-color: transparent;
   color: #fff;
-  opacity: 0.9;
+  margin-bottom: 1.6rem;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
-.tasks-list .task-cont .task,
+main .boards .board-container .tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  min-height: 3rem;
+}
+
+main .boards .board-container .tasks-list .task-cont {
+  position: relative;
+  border-radius: 0.5rem;
+  width: 25rem;
+  height: 3rem;
+}
+
+main .boards .board-container .tasks-list .task-cont .task,
 .add-btn {
-  width: 85%;
+  width: 25rem;
   height: 3rem;
   margin-bottom: 0.5rem;
   padding: 0 1.4rem;
 }
 
-.tasks-list .task-cont .task:disabled {
+main .boards .board-container .tasks-list .task-cont .task:disabled {
   background-color: #fff;
   color: #000;
 }
 
-.tasks-list .task-cont {
-  position: relative;
+main .boards .board-container .tasks-list .task-cont .task {
+  cursor: move;
 }
-.tasks-list .task-cont .control-btns {
+
+main .boards .board-container .tasks-list .task-cont .control-btns {
   position: absolute;
-  top: 0.5rem;
-  right: 5rem;
+  top: 0.1rem;
+  right: 1rem;
   display: flex;
   justify-content: space-between;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
 .tasks-list .task-cont .control-btns button {
-  padding: 0.25rem;
-  border-radius: 20rem;
+  padding: 0.4rem;
+  color: #fff;
+  border-radius: 50rem;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: 900;
+  opacity: 0.6;
 }
 
-.add-board {
-  width: 25rem;
-  margin-right: 5rem;
-  margin-top: 6rem;
+.tasks-list .task-cont .control-btns button:hover {
+  /* transform: scale(1.1); */
+  opacity: 1;
+}
+.tasks-list .task-cont .control-btns button.edit {
+  color: #c20e68;
+}
+.tasks-list .task-cont .control-btns button.remove {
+  color: #f00;
 }

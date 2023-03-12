@@ -82,6 +82,7 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #ffff;
+  background-color: #34f0a8;
   overflow-x: hidden;
 }
 
@@ -91,8 +92,7 @@ body {
 
 .container {
   /* 1140px */
-  /* max-width: 120rem; */
-  padding: 10rem 3.2rem;
+  max-width: 114rem;
   margin: 0 auto;
 }
 
@@ -111,9 +111,15 @@ button,
 input {
   border-radius: 0.5rem;
   border-color: transparent;
+  cursor: pointer;
 }
 
 input:not(:disabled):focus {
   border-color: transparent;
   outline: #03ac6bce solid 2px;
+}
+
+.hide {
+  visibility: hidden;
+  transition: all 0.333s;
 }
