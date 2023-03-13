@@ -1,10 +1,16 @@
 let addTaskBtn = Array.from(document.querySelectorAll('.board-container .add-btn'));
 
-let tasksLists = document.querySelectorAll('.tasks-list');
+let tasksLists = Array.from(document.querySelectorAll('.tasks-list'));
 let boardsDiv = document.querySelector('.boards');
 let boardContainer = document.querySelectorAll('.board-container');
 let drag = null;
 
+// <=============== get Lists from Local Storage ==========>
+if (window.localStorage.getItem("list-1") != null) {
+  getListsFromLocalStorage();
+  controlsHandler();
+  dragItem();
+}
 
 
 addTaskBtn.forEach(btn => {
@@ -55,6 +61,8 @@ function dragItem() {
     task.addEventListener('dragend', function () {
       drag = null;
       task.style.opacity = '1';
+      // set Lists To Local Storage
+      setListsToLocalStorage();
     })
 
     boardContainer.forEach(list => {
@@ -75,6 +83,8 @@ function dragItem() {
       })
     })
   })
+  // set Lists To Local Storage
+  setListsToLocalStorage();
 }
 
 
@@ -84,8 +94,11 @@ function makeAllTasksDisable(currentTask) {
       let editBtns = Array.from(document.querySelectorAll('.tasks-list .task-cont .control-btns .edit'));
       editBtns.forEach(btn => {
         let allTasksInput = btn.parentElement.parentElement.children[0];
+        allTasksInput.setAttribute('value', `${allTasksInput.value}`);
         allTasksInput.setAttribute('disabled', 'true');
         btn.classList.remove('hide');
+        // set Lists To Local Storage
+        setListsToLocalStorage();
       })
     }
   }
@@ -108,6 +121,26 @@ function controlsHandler() {
     btn.addEventListener('click', function () {
       let currentTaskContainer = this.parentElement.parentElement;
       currentTaskContainer.remove();
+      setListsToLocalStorage()
     })
   });
+}
+
+// <============== Local Storage ===============> 
+
+function setListsToLocalStorage() {
+  let tasksLists = Array.from(document.querySelectorAll('.tasks-list'));
+  let tasksFromList0 = tasksLists[0].innerHTML;
+  let tasksFromList1 = tasksLists[1].innerHTML;
+  let tasksFromList2 = tasksLists[2].innerHTML;
+  window.localStorage.setItem("list-0", tasksFromList0);
+  window.localStorage.setItem("list-1", tasksFromList1);
+  window.localStorage.setItem("list-2", tasksFromList2);
+}
+
+
+function getListsFromLocalStorage() {
+  tasksLists[0].innerHTML = window.localStorage.getItem("list-0");
+  tasksLists[1].innerHTML = window.localStorage.getItem("list-1");
+  tasksLists[2].innerHTML = window.localStorage.getItem("list-2");
 }
