@@ -33,11 +33,13 @@ addTaskBtn.forEach(btn => {
     // create edit btn
     let editBtn = document.createElement('button');
     editBtn.className = 'edit';
+    editBtn.setAttribute('name', 'edit button');
     editBtn.innerHTML = `<i class="fa-solid fa-pen-to-square"></i>`
     ctrBtnCont.appendChild(editBtn);
     // create remove btn
     let removeBtn = document.createElement('button');
     removeBtn.className = 'remove';
+    removeBtn.setAttribute('name', 'remove button');
     removeBtn.innerHTML = `<i class="fa-sharp fa-solid fa-trash"></i>`;
     ctrBtnCont.appendChild(removeBtn);
     newTask.appendChild(ctrBtnCont);
@@ -57,6 +59,36 @@ function dragItem() {
       drag = task;
       task.style.opacity = '0.5';
     })
+    // For Phone
+    task.addEventListener('touchstart', function (e) {
+      drag = task;
+      task.style.opacity = '0.5';
+      ;[...e.changedTouches].forEach(touch => {
+        task.style.top = `${touch.pageY / 100}px`;
+        task.style.left = `${touch.pageX / 100}px`;
+        task.id = touch.identifier;
+      })
+    })
+    task.addEventListener('touchmove', function (e) {
+      e.preventDefault();
+      ;[...e.changedTouches].forEach(touch => {
+        task.style.position = `absolute`;
+        task.style.top = `${touch.pageY - 15}px`;   // To move task from center on Y-axis
+        task.style.left = `${touch.pageX - 125}px`; // To move task from center on X-axis
+        task.id = touch.identifier;
+        boardContainer.forEach(list => {
+          console.log(list);
+          console.log(list.offsetTop);
+          if (list.offsetTop < touch.pageY) {
+            let currentList = list.querySelector(".tasks-list");
+            currentList.style.background = 'var(--second-BG-color)';
+          } else {
+            let currentList = list.querySelector(".tasks-list");
+            currentList.style.background = 'transparent';
+          }
+        })
+      })
+    })
 
     task.addEventListener('dragend', function () {
       drag = null;
@@ -65,11 +97,33 @@ function dragItem() {
       setListsToLocalStorage();
     })
 
+    // For Phone
+    task.addEventListener('touchend', function (e) {
+      task.style.opacity = '1';
+      ;[...e.changedTouches].forEach(touch => {
+        task.style.position = `relative`;
+        task.style.top = `0px`;
+        task.style.left = `0px`;
+        task.id = touch.identifier;
+        boardContainer.forEach(list => {
+          let currentList = list.querySelector(".tasks-list");
+          currentList.style.background = 'transparent';
+          if (list.offsetTop < touch.pageY && drag !== null) {
+            let choosingList = list.querySelector(".tasks-list");
+            choosingList.appendChild(drag);
+          }
+        });
+        drag = null;
+      })
+      // set Lists To Local Storage
+      setListsToLocalStorage();
+    })
+
     boardContainer.forEach(list => {
       list.addEventListener('dragover', function (e) {
         let currentList = this.querySelector(".tasks-list");
         e.preventDefault();
-        currentList.style.background = '#03ac6bce';
+        currentList.style.background = 'var(--second-BG-color)';
       })
 
       list.addEventListener('dragleave', function () {
