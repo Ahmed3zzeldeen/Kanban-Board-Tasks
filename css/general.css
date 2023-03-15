@@ -24,6 +24,12 @@ Large: 1.8
 --- 02 COLORS
 
 - Primary:
+  --main-BG-color: #80b918;
+  --main-text-color: #fff;
+  --black-color: #000000;
+  --second-BG-color: #414833;
+  --edit-btn-color: #0a02ec;
+  --trash-btn-color: #000000;
 
 - Tints:
 
@@ -56,6 +62,24 @@ Medium: 11px
   box-sizing: border-box;
 }
 
+/* 
+  Default colors;
+    --main-BG-color: #80b918;
+    --main-text-color: #fff;
+    --black-color: #000000;
+    --second-BG-color: #414833;
+    --edit-btn-color: #0a02ec;  // or   #c20e68;  //
+    --trash-btn-color: #000000; // or   #f00;     //
+
+  Theme Two [Yellow Theme]
+    --main-BG-color: #F9C846;
+    --main-text-color: #ffff;
+    --black-color: #000000;
+    --second-BG-color: #545863;
+    --edit-btn-color: #0900ff;
+    --trash-btn-color: #F00;
+*/
+
 ::selection {
   background-color: #1a1a1a63;
   color: #eee;
@@ -67,9 +91,16 @@ Medium: 11px
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #34f0a8;
+  background-color: var(--main-BG-color);
 }
-
+:root {
+  --main-BG-color: #80b918;
+  --main-text-color: #fff;
+  --black-color: #000000;
+  --second-BG-color: #414833;
+  --edit-btn-color: #0a02ec;
+  --trash-btn-color: #000000;
+}
 html {
   /* font-size: 10px; */
   /* 10px / 16px = 0.625 = 62.5% */
@@ -81,9 +112,27 @@ body {
   font-family: "Roboto", sans-serif;
   line-height: 1;
   font-weight: 400;
-  color: #ffff;
-  background-color: #34f0a8;
+  background-color: var(--main-BG-color);
+  color: var(--main-text-color);
   overflow-x: hidden;
+}
+
+body.Default-Theme {
+  --main-BG-color: #80b918;
+  --main-text-color: #fff;
+  --black-color: #000000;
+  --second-BG-color: #414833;
+  --edit-btn-color: #0a02ec;
+  --trash-btn-color: #000000;
+}
+
+body.yellow-Theme {
+  --main-BG-color: #f9c846;
+  --main-text-color: #ffff;
+  --black-color: #000000;
+  --second-BG-color: #545863;
+  --edit-btn-color: #0900ff;
+  --trash-btn-color: #f00;
 }
 
 /**************************/
@@ -101,8 +150,8 @@ body {
   padding: 0 1.4rem;
   border-radius: 0.5rem;
   border-color: transparent;
-  background-color: #03ac6bce;
-  color: #fff;
+  background-color: var(--second-BG-color);
+  color: var(--main-text-color);
   font-weight: 600;
   cursor: pointer;
 }
@@ -116,7 +165,7 @@ input {
 
 input:not(:disabled):focus {
   border-color: transparent;
-  outline: #03ac6bce solid 2px;
+  outline: var(--second-BG-color) solid 2px;
 }
 
 .hide {

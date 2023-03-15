@@ -8,6 +8,7 @@
   <title>Kanban-Board | Task Manger</title>
   <!--Icons-->
   <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon">
   <!-- Google Fonts Roboto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -16,35 +17,39 @@
     rel="stylesheet">
   <link rel="stylesheet" href="./css/general.css">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/queries.css">
 </head>
 
-<body>
+<body class="Default-Theme">
   <header class="container">
-    <h1 class="main-heading">Kanban-Board | Task Manger</h1>
+    <h1 class="main-heading">Kanban-Board</h1>
   </header>
   <main class="container">
     <div class="boards">
       <div class="board-container">
-        <input class="board-title" type="text" placeholder="board-title" value="Not Started" disabled>
+        <input class="board-title" type="text" placeholder="board-title" value="Not Started 📝" disabled>
         <div class="tasks-list">
         </div>
-        <button class="add-btn btn">+ Add</button>
+        <button class="add-btn btn" title="add new task button">+ Add</button>
       </div>
       <div class="board-container">
-        <input class="board-title" type="text" placeholder="board-title" value="In Progress" disabled>
+        <input class="board-title" type="text" placeholder="board-title" value="In Progress 🚀" disabled>
         <div class="tasks-list">
         </div>
-        <button class="add-btn btn">+ Add</button>
+        <button class="add-btn btn" title="add new task button">+ Add</button>
       </div>
       <div class="board-container">
-        <input class="board-title" type="text" placeholder="board-title" value="Completed" disabled>
+        <input class="board-title" type="text" placeholder="board-title" value="Completed ✅" disabled>
         <div class="tasks-list">
         </div>
-        <button class="add-btn btn">+ Add</button>
+        <button class="add-btn btn" title="add new task button">+ Add</button>
       </div>
     </div>
   </main>
+  <footer>
+    <p class="developer-name-cont"> Coded with <span>🖤</span> &amp; <span>🍕</span> By <a href="#">Ahmed M.
+        Ezzeldeen</a>
+    </p>
+  </footer>
 </body>
 <script src="./js/main.js"></script>
 
